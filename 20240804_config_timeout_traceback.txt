@@ -1,0 +1,46 @@
+This will move the motor, ensure it can spin freely!
+Starting calibration process
+Testing 2.768V for resistance
+Using 2.768 V for resistance and inductance calibration
+Calculating winding resistance
+1.384V - 0.927A
+1.661V - 1.214A
+1.938V - 1.527A
+2.353V - 1.733A
+2.768V - 2.001A
+Searching for index
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1870, in <module>
+    main()
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1866, in main
+    asyncio.run(async_main())
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1862, in async_main
+    await runner.start()
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1650, in start
+    await self.run_action(target)
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1723, in run_action
+    await stream.do_calibrate()
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 922, in do_calibrate
+    cal_result = await self.calibrate_encoder_mapping(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1031, in calibrate_encoder_mapping
+    return await self.calibrate_encoder_mapping_absolute(encoder_cal_voltage)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1128, in calibrate_encoder_mapping_absolute
+    await self.ensure_valid_theta(encoder_cal_voltage)
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1125, in ensure_valid_theta
+    await self.find_index(encoder_cal_voltage)
+  File "C:\Users\xxxxxx\AppData\Local\Programs\Python\Python312\Lib\site-packages\moteus\moteus_tool.py", line 1102, in find_index
+    raise RuntimeError("Timeout searching for index")
+RuntimeError: Timeout searching for index
